@@ -1,0 +1,3 @@
+﻿  TestRepoFile.cpp
+D:\Documente\Desktop\c++\Laborator 8-11\Farmacie\Farmacie\RepoFile.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Farmacie.vcxproj -> D:\Documente\Desktop\c++\Laborator 8-11\Farmacie\Debug\Farmacie.exe
