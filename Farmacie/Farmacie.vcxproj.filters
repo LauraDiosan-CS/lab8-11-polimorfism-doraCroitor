@@ -60,6 +60,24 @@
     <ClInclude Include="RepositoryFileTXT.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RepoUtilizatori.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceLogin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MedicineService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Entitate.cpp">
@@ -104,6 +122,18 @@
     <ClCompile Include="TestLogin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ServiceLogin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MedicineService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Test.txt" />
@@ -116,6 +146,8 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="TestLogin.txt" />
+    <Text Include="Utilizatori.txt" />
+    <Text Include="Farmacie.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TestFarmacieIn.csv">
@@ -124,5 +156,6 @@
     <None Include="TestFarmacieOut.csv">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Farmacie.csv" />
   </ItemGroup>
 </Project>

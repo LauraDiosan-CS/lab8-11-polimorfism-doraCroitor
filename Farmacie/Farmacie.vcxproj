@@ -139,46 +139,59 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Angajat.h" />
+    <ClInclude Include="Console.h" />
     <ClInclude Include="Entitate.h" />
+    <ClInclude Include="Exception.h" />
     <ClInclude Include="Login.h" />
     <ClInclude Include="Medicament.h" />
+    <ClInclude Include="MedicineService.h" />
     <ClInclude Include="RepoFileCSV.h" />
     <ClInclude Include="RepoFileTXT.h" />
     <ClInclude Include="RepoFile.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="RepositoryFileTXT.h" />
+    <ClInclude Include="RepoUtilizatori.h" />
     <ClInclude Include="Service.h" />
+    <ClInclude Include="ServiceLogin.h" />
     <ClInclude Include="TestAngajat.h" />
     <ClInclude Include="TestEntitate.h" />
     <ClInclude Include="TestLogin.h" />
     <ClInclude Include="TestMedicament.h" />
     <ClInclude Include="TestRepoFile.h" />
+    <ClInclude Include="TestService.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Angajat.cpp" />
     <ClCompile Include="app.cpp" />
+    <ClCompile Include="Console.cpp" />
     <ClCompile Include="Entitate.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Medicament.cpp" />
+    <ClCompile Include="MedicineService.cpp" />
     <ClCompile Include="RepoFile.cpp" />
     <ClCompile Include="RepoFileCSV.cpp" />
     <ClCompile Include="RepoFileTXT.cpp" />
     <ClCompile Include="Service.cpp" />
+    <ClCompile Include="ServiceLogin.cpp" />
     <ClCompile Include="TestAngajat.cpp" />
     <ClCompile Include="TestLogin.cpp" />
     <ClCompile Include="TestMedicament.cpp" />
     <ClCompile Include="TestEntitate.cpp" />
     <ClCompile Include="TestRepoFile.cpp" />
+    <ClCompile Include="TestService.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Farmacie.txt" />
     <Text Include="Test.txt" />
     <Text Include="TestAng.txt" />
     <Text Include="TestFarmacieIn.txt" />
     <Text Include="TestFarmacieOut.txt" />
     <Text Include="TestMed.txt" />
     <Text Include="TestLogin.txt" />
+    <Text Include="Utilizatori.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Farmacie.csv" />
     <None Include="TestFarmacieIn.csv" />
     <None Include="TestFarmacieOut.csv" />
   </ItemGroup>

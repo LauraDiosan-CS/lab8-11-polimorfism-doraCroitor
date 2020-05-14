@@ -8,7 +8,7 @@ RepoFileCSV::RepoFileCSV() :RepoFile() {
 }
 
 RepoFileCSV::RepoFileCSV(string fileName) : RepoFile(fileName) {
-
+	this->loadFromfile();
 }
 
 RepoFileCSV::~RepoFileCSV() {
@@ -39,7 +39,6 @@ void RepoFileCSV::loadFromfile() {
 					reteta = false;
 				else
 					reteta = true;
-				//bool reteta = linie.substr(0, pos);
 				linie = linie.erase(0, pos + 1);
 
 				pos = linie.find(delim);

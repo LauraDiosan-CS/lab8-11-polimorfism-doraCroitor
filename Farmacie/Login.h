@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class Login {
@@ -25,4 +26,7 @@ public:
 	//Login& operator=(const Login& l);
 	friend ostream& operator<<(ostream& os, const Login& l);
 	friend istream& operator>>(istream& os, Login& l);
+
+	void getCSVObj(vector<string> info);
+	string getCSVString();
 };

@@ -74,9 +74,23 @@ istream& operator>>(istream& is, Login& e) {
 }
 
 string Login::toString(string delim) {
-	return "USER" + delim + this->username + delim + this->parola;
+	return  this->username + delim + this->parola;
 }
 
 Login* Login::clone() {
 	return new Login(this->username, this->parola);
+}
+
+void Login::getCSVObj(vector<string> info) {
+	this->username = info[0];
+	this->parola = info[1];
+	this->parola.erase(0, 1);
+}
+
+string Login::getCSVString() {
+	string csv;
+	csv.append(this->username);
+	csv.append(", ");
+	csv.append(this->parola);
+	return csv;
 }

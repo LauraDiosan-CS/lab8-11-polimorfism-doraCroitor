@@ -9,7 +9,7 @@ RepoFileTXT::RepoFileTXT() :RepoFile() {
 }
 
 RepoFileTXT::RepoFileTXT(string fileName) : RepoFile(fileName) {
-
+	this->loadFromfile();
 }
 
 RepoFileTXT::~RepoFileTXT() {

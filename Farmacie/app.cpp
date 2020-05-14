@@ -8,6 +8,11 @@
 #include "RepoFileTXT.h"
 #include "TestRepoFile.h"
 #include "TestLogin.h"
+#include "MedicineService.h"
+#include "Console.h"
+#include"Login.h"
+#include "RepoUtilizatori.h"
+#include "TestService.h"
 
 using namespace std;
 
@@ -27,6 +32,20 @@ int main() {
 	TestRepoFile testRepoFile;
 	testRepoFile.testAll();
 
-	cout << "Totul ok ";
+	TestService testService;
+	testService.testAll();
+
+
+	RepoUtilizatori<Login> repo("Utilizatori.txt");
+	RepoFile repoFile;
+	RepoFileCSV repoCSV("Farmacie.csv");
+	RepoFileTXT repoTXT("Farmacie.txt");
+	ServiceLogin s(repo);
+	Service service;
+	MedicineService medService;
+	Console console(service, s, medService);
+	console.runConsole();
+
+	//cout << "Totul ok ";
 	return 0;
 }
