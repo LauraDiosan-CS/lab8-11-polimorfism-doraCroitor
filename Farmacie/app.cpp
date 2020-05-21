@@ -43,7 +43,7 @@ int main() {
 	ServiceLogin s(repo);
 	Service service;
 	MedicineService medService;
-	Console console(service, s, medService);
+	Console console(service, s);
 	console.runConsole();
 
 	//cout << "Totul ok ";

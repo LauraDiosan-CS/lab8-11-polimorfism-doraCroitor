@@ -1,6 +1,8 @@
 #pragma once
 #include "Entitate.h";
 #include <vector>
+#include "ValidatorAngajat.h"
+#include "ValidatorMedicament.h"
 
 using namespace std;
 
@@ -20,6 +22,7 @@ public:
 	void addElem(Entitate* e);
 	void updateElem(Entitate* eVechi, Entitate* eNou);
 	void deleteElem(Entitate* e);
+	int findEntitate(Entitate* e);
 
 	void emptyRepo();
 

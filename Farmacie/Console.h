@@ -9,14 +9,14 @@ class Console {
 private:
 	Service service;
 	ServiceLogin serviceLogin;
-	MedicineService medService;
+	//MedicineService medService;
 public:
 	Console() {};
 	~Console() {};
-	Console(const Service& s,const ServiceLogin& sl, const MedicineService& ms) {
+	Console(const Service& s,const ServiceLogin& sl/*, const MedicineService& ms*/) {
 		this->service = s;
 		this->serviceLogin = sl;
-		this->medService = ms;
+		//this->medService = ms;
 	}
 
 	void meniu() {
@@ -33,7 +33,7 @@ public:
 		cout << "c. Modifica medicament \n";
 	}
 
-	void setRepo();
+	bool setRepo();
 	bool handleLogare();
 	void handleCautare();
 	void handleAddMedicamente();
@@ -46,5 +46,5 @@ public:
 	void handleShowUtilizatori();
 
 	void runConsole();
-	int getInteger();
+	//int getInteger();
 };

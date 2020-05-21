@@ -145,6 +145,8 @@
     <ClInclude Include="Login.h" />
     <ClInclude Include="Medicament.h" />
     <ClInclude Include="MedicineService.h" />
+    <ClInclude Include="ReadFromFileException.h" />
+    <ClInclude Include="RepoException.h" />
     <ClInclude Include="RepoFileCSV.h" />
     <ClInclude Include="RepoFileTXT.h" />
     <ClInclude Include="RepoFile.h" />
@@ -159,6 +161,10 @@
     <ClInclude Include="TestMedicament.h" />
     <ClInclude Include="TestRepoFile.h" />
     <ClInclude Include="TestService.h" />
+    <ClInclude Include="ValidationException.h" />
+    <ClInclude Include="ValidatorAngajat.h" />
+    <ClInclude Include="ValidatorEntitate.h" />
+    <ClInclude Include="ValidatorMedicament.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Angajat.cpp" />
@@ -179,6 +185,9 @@
     <ClCompile Include="TestEntitate.cpp" />
     <ClCompile Include="TestRepoFile.cpp" />
     <ClCompile Include="TestService.cpp" />
+    <ClCompile Include="ValidatorAngajat.cpp" />
+    <ClCompile Include="ValidatorEntitate.cpp" />
+    <ClCompile Include="ValidatorMedicament.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Farmacie.txt" />

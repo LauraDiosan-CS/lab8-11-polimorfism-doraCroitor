@@ -1,4 +1,11 @@
 #include "Service.h"
+#include "ValidationException.h"
+#include "ValidatorAngajat.h"
+#include "ValidatorEntitate.h"
+#include "ValidatorMedicament.h"
+#include "ReadFromFileException.h"
+#include "RepoException.h"
+
 
 Service::Service() {
 	this->repo = 0;
@@ -26,8 +33,9 @@ int Service::getSize() {
 	return this->repo->getSize();
 }
 
-void Service::addMedicament(int id, string nume, bool reteta, int nrStoc, string producator) {
+void Service::addMedicament(int id, string nume, bool reteta, int nrStoc, string producator)  {
 	Medicament* m = new Medicament(id, nume, reteta, nrStoc, producator);
+	//ValidatorMedicament::validate(m);
 	this->repo->addElem(m);
 }
 
@@ -36,7 +44,7 @@ void Service::addAngajat(int id, string nume, string email, int grad) {
 	this->repo->addElem(a);
 }
 
-void Service::sterge(int id, string initial) {
+void Service::sterge(int id, string initial)   {
 	int n = this->repo->getSize();
 	for (int i = 0; i < n; i++) {
 		string aux = this->repo->getAll()[i]->toString(",");
@@ -49,7 +57,7 @@ void Service::sterge(int id, string initial) {
 	
 }
 
-void Service::updateMedicament(int id, string nouNume, bool nouReteta, int nouNrStoc, string nouProducator) {
+void Service::updateMedicament(int id, string nouNume, bool nouReteta, int nouNrStoc, string nouProducator)  {
 	int n = this->repo->getSize();
 	for (int i = 0; i < n; i++) {
 		string aux = this->repo->getAll()[i]->toString(",");

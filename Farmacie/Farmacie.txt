@@ -1,6 +1,7 @@
-ANG/2/ang1/a1@yahoo.com/4
+ANG/2/ang1/a1@yahoo.com/5
 ANG/1/Angela Pop/ap@yahoo.com/10
-ANG/5/Pop Marius/pm@yahoo.com/3
+ANG/5/Pop Marius/pm@yahoo.com/5
 MED/1/paracetamol /true/25/prod1
 MED/25/parasinus/false/20/prodMania 
 MED/13/nurofen/false/548/medSan 
+MED/2/calcidin/true/125/med farm

@@ -29,14 +29,6 @@ bool Console::handleLogare() {
 	else
 		return false;
 
-	/*cout << "Username: ";
-	cin >> username;
-	cout << "Parola: ";
-	cin >> parola;
-	if (this->serviceLogin.existaUtilizator(username, parola) == false)
-		return false;
-	else
-		return true;*/
 
 }
 
@@ -65,6 +57,7 @@ void Console::handleShowMed() {
 
 
 void Console::handleAddMedicamente() {
+	
 	int id;
 	int nrStoc;
 	string nume;
@@ -79,7 +72,7 @@ void Console::handleAddMedicamente() {
 
 	cin.ignore();
 	cout << "Reteta: "; cin >> reteta;
-	
+
 	cout << "Nr stoc: "; cin >> nrStoc;
 	cin.ignore();
 	cout << "Producator: ";
@@ -90,18 +83,35 @@ void Console::handleAddMedicamente() {
 		retetaBool = true;
 	else
 		retetaBool = false;
-	//Medicament* m=new Medicament(id, nume, retetaBool, nrStoc, producator);
+
 	this->service.addMedicament(id, nume, retetaBool, nrStoc, producator);
 	cout << "Medicament adaugat";
+	
 }
 
 
 
-void Console::setRepo() {
+bool Console::setRepo() {
 	string repo;
-	cout << "Ce fisier doriti sa folositi, TXT sau CSV?: ";
-	cin >> repo;
-	this->service.setRepo(repo);
+	bool ok = true;
+	
+	do {
+		cout << "Ce fisier doriti sa folositi, TXT sau CSV?: ";
+		cin >> repo;
+		if (repo == "Farmacie.txt" || repo == "Farmacie.csv") {
+			this->service.setRepo(repo);
+			ok = true;
+		}
+		else {
+			cout << "Nu e bun fisierul!";
+			ok = false;
+			
+		}
+	} while (repo != "Farmacie.txt" && repo != "Farmacie.csv");
+	
+	if (ok == true)
+		return true;
+	else return false;
 }
 
 
@@ -200,45 +210,25 @@ void Console::handleShowUtilizatori() {
 
 void Console::runConsole() {
 
-	this->setRepo();
-	if (this->handleLogare() == true) {
-		//this->handleShow();
-		cout << endl;
-		cout << "***MEDICAMENTE***";
-		cout << endl;
-		this->handleShowMed();
-		cout << endl;
-		cout << "***ANGAJATI***";
-		cout << endl;
-		this->handleShowAng();
-		cout << endl;
-		//this->setRepo();
-		int op;
-		while (true) {
-			this->meniu();
-			cin >> op;
-			if (op == 1) {
-				this->handleCautare();
-				cout << endl;
-				//this->handleShow();
-				cout << endl;
-				cout << "***MEDICAMENTE***";
-				cout << endl;
-				this->handleShowMed();
-				cout << endl;
-				cout << "***ANGAJATI***";
-				cout << endl;
-				this->handleShowAng();
-				cout << endl;
-				cout << endl;
-				
-			}
-			else if (op == 2) {
-				this->meniu2();
-				string op2;
-				cin >> op2;
-				if (op2 == "a") {
-					this->handleAddMedicamente();
+	if (this->setRepo() == true) {
+		if (this->handleLogare() == true) {
+			//this->handleShow();
+			cout << endl;
+			cout << "***MEDICAMENTE***";
+			cout << endl;
+			this->handleShowMed();
+			cout << endl;
+			cout << "***ANGAJATI***";
+			cout << endl;
+			this->handleShowAng();
+			cout << endl;
+			//this->setRepo();
+			int op;
+			while (true) {
+				this->meniu();
+				cin >> op;
+				if (op == 1) {
+					this->handleCautare();
 					cout << endl;
 					//this->handleShow();
 					cout << endl;
@@ -246,72 +236,100 @@ void Console::runConsole() {
 					cout << endl;
 					this->handleShowMed();
 					cout << endl;
+					cout << "***ANGAJATI***";
 					cout << endl;
-					
-				}
-				else if (op2 == "b") {
-					this->handleDeleteMedicamente();
-					cout << endl;
-					//this->handleShow();
-					cout << endl;
-					cout << "***MEDICAMENTE***";
-					cout << endl;
-					this->handleShowMed();
+					this->handleShowAng();
 					cout << endl;
 					cout << endl;
-					
-				}
-				else if (op2 == "c") {
-					this->handleUpdateMedicamente();
-					cout << endl;
-					//this->handleShow();
-					cout << endl;
-					cout << "***MEDICAMENTE***";
-					cout << endl;
-					this->handleShowMed();
-					cout << endl;
-					cout << endl;
-					
-				}
-			}
-			else if (op == 3) {
-				this->handleGrad();
-				cout << endl;
-				//this->handleShow();
-				cout << endl;
-				cout << "***MEDICAMENTE***";
-				cout << endl;
-				this->handleShowMed();
-				cout << endl;
-				cout << "***ANGAJATI***";
-				cout << endl;
-				this->handleShowAng();
-				cout << endl;
-				cout << endl;
-				
-			}
-			else if (op == 4) {
-				cout << endl;
-				cout << "***UTILIZATORI*** \n";
-				this->handleShowUtilizatori();
-				cout << endl;
-				//this->handleShow();
-				cout << endl;
-				cout << "***MEDICAMENTE***";
-				cout << endl;
-				this->handleShowMed();
-				cout << endl;
-				cout << "***ANGAJATI***";
-				cout << endl;
-				this->handleShowAng();
-				cout << endl;
-				cout << endl;
 
+				}
+				else if (op == 2) {
+					this->meniu2();
+					string op2;
+					cin >> op2;
+					if (op2 == "a") {
+						this->handleAddMedicamente();
+						cout << endl;
+						//this->handleShow();
+						cout << endl;
+						cout << "***MEDICAMENTE***";
+						cout << endl;
+						this->handleShowMed();
+						cout << endl;
+						cout << endl;
+
+					}
+					else if (op2 == "b") {
+						this->handleDeleteMedicamente();
+						cout << endl;
+						//this->handleShow();
+						cout << endl;
+						cout << "***MEDICAMENTE***";
+						cout << endl;
+						this->handleShowMed();
+						cout << endl;
+						cout << endl;
+
+					}
+					else if (op2 == "c") {
+						this->handleUpdateMedicamente();
+						cout << endl;
+						//this->handleShow();
+						cout << endl;
+						cout << "***MEDICAMENTE***";
+						cout << endl;
+						this->handleShowMed();
+						cout << endl;
+						cout << endl;
+
+					}
+				}
+				else if (op == 3) {
+					cout << endl;
+					cout << "***ANGAJATI***";
+					cout << endl;
+					this->handleShowAng();
+					cout << endl;
+					this->handleGrad();
+					cout << endl;
+					//this->handleShow();
+					cout << endl;
+					cout << "***MEDICAMENTE***";
+					cout << endl;
+					this->handleShowMed();
+					cout << endl;
+					cout << "***ANGAJATI***";
+					cout << endl;
+					this->handleShowAng();
+					cout << endl;
+					cout << endl;
+
+				}
+				else if (op == 4) {
+					cout << endl;
+					cout << "***UTILIZATORI*** \n";
+					this->handleShowUtilizatori();
+					cout << endl;
+					//this->handleShow();
+					cout << endl;
+					cout << "***MEDICAMENTE***";
+					cout << endl;
+					this->handleShowMed();
+					cout << endl;
+					cout << "***ANGAJATI***";
+					cout << endl;
+					this->handleShowAng();
+					cout << endl;
+					cout << endl;
+
+				}
+				else
+					if (op == 5) {
+						cout << "Esti delogat! Ruleaza iar ca sa te loghezi!";
+						return;
+					}
 			}
-			else
-				return;
 		}
 	}
-	
 
 }
